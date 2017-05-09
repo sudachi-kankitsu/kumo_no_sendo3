@@ -9,8 +9,8 @@ namespace GodTouches
 		public GameObject player;
 		float ScreenLeft;
 		float ScreenRight;
-		public static float playerYspeed = 1;	//縦に動く速さ（一定）
-		public float playerXspeed = 1;	//横に動く速さ（最大）
+		public static float playerYspeed = 2;	//縦に動く速さ（一定）
+		public static float playerXspeed = 1;	//横に動く速さ（最大）
 		float Xcontroller = 0;			//横の速さの調節用
 		float dragspeed;
 
