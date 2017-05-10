@@ -9,7 +9,7 @@ public class PlayerHPScript : MonoBehaviour {
 	bool muteki = false;
 	public Text HP;
 
-	float interval = 0.5f;
+	float interval = 0.25f;
 	public Renderer rend;
 
 	void Start () {
@@ -25,7 +25,7 @@ public class PlayerHPScript : MonoBehaviour {
 			interval -= Time.deltaTime;
 			if (interval <= 0){
 				rend.enabled = !rend.enabled;
-				interval = 0.5f;
+				interval = 0.25f;
 			}
 		}
 

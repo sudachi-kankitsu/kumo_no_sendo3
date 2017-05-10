@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58724567821365028}
   - component: {fileID: 50098235689328718}
   - component: {fileID: 114004139203538328}
+  - component: {fileID: 114724129624968718}
   m_Layer: 10
   m_Name: ShotEnemy
   m_TagString: enemy
@@ -89,6 +90,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 1163127251784848, guid: b29bdd0f5f6d5479784157a9571a961c, type: 2}
+--- !u!114 &114724129624968718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653238260337468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0871b41dd6d46bfb58211795c05cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212531162838530886
 SpriteRenderer:
   m_ObjectHideFlags: 1
