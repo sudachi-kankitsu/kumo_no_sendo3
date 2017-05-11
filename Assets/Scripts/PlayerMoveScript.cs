@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GodTouches
 {
@@ -45,13 +46,18 @@ namespace GodTouches
 	//タッチ開始
 			if (phase == GodPhase.Began) 
 			{
-				
+				if (playerYspeed == 0) {
+	//リスタート
+					Debug.Log("restart");
+					playerYspeed = 2;
+					SceneManager.LoadScene("main"); 
+				}
 			}
 	//タッチ中
 			else if (phase == GodPhase.Moved) 	
 			{
 		//ドラッグの移動量でXcontrollerを変化（-1から1の中で）
-				dragspeed = GodTouch.GetDeltaPosition().x / Screen.width/1.5f;
+				dragspeed = GodTouch.GetDeltaPosition().x / Screen.width * 2f;
 				if (Xcontroller >= 1) {
 					Xcontroller -= 3 * Time.deltaTime;
 				} else if (Xcontroller <= -1) {

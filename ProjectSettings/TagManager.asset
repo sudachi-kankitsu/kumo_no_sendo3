@@ -8,6 +8,8 @@ TagManager:
   - nonDestroyableEnemy
   - Camera
   - ObjectKiller
+  - frontObjectKiller
+  - BossFlagController
   layers:
   - Default
   - TransparentFX
