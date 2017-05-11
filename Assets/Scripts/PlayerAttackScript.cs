@@ -29,8 +29,9 @@ namespace GodTouches{
 				else if (phase == GodPhase.Ended) {
 					if (Time.time - startTime < CheckTime) {
 
-			//攻撃して相手を消す
-						Destroy (other.gameObject);
+			//相手のDamage関数を実行する
+						EnemyDamageScript Edam = other.GetComponent<EnemyDamageScript>();
+						Edam.Damage ();
 			//相手がいたところにエフェクト
 						Instantiate(AttackEffect,other.transform.position,Quaternion.identity);
 					}

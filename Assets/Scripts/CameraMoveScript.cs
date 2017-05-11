@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-	public class CameraMoveScript : MonoBehaviour {
+public class CameraMoveScript : MonoBehaviour {
 
 		void Start () {
 		}

@@ -46,7 +46,7 @@ namespace GodTouches
 	//タッチ開始
 			if (phase == GodPhase.Began) 
 			{
-				if (playerYspeed == 0) {
+				if (player.activeSelf == false) {
 	//リスタート
 					Debug.Log("restart");
 					playerYspeed = 2;
