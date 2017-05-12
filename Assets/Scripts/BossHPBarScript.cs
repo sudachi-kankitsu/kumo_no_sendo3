@@ -15,7 +15,7 @@ public class BossHPBarScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		EnemyDamageScript Edam = Boss.GetComponent <EnemyDamageScript> ();
-		BossHPBar.fillAmount =  Edam.HPsend() / BossFullHP;
+		BossDamageScript Bdam = Boss.GetComponent <BossDamageScript> ();
+		BossHPBar.fillAmount =  Bdam.HPsend() / BossFullHP;
 	}
 }

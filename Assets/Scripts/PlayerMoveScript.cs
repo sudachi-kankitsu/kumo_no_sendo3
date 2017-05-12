@@ -23,6 +23,8 @@ namespace GodTouches
 			Vector3 maxpos = camera.ViewportToWorldPoint(new Vector3(1,1,10));
 			ScreenLeft = minpos.x + 0.1f;	//画面外チェック
 			ScreenRight = maxpos.x - 0.1f;
+			playerYspeed = 2;
+			Xcontroller = 0;
 		}
 
 		void Update()
@@ -43,18 +45,8 @@ namespace GodTouches
 
 
 			var phase = GodTouch.GetPhase ();
-	//タッチ開始
-			if (phase == GodPhase.Began) 
-			{
-				if (player.activeSelf == false) {
-	//リスタート
-					Debug.Log("restart");
-					playerYspeed = 2;
-					SceneManager.LoadScene("main"); 
-				}
-			}
 	//タッチ中
-			else if (phase == GodPhase.Moved) 	
+			if (phase == GodPhase.Moved) 	
 			{
 		//ドラッグの移動量でXcontrollerを変化（-1から1の中で）
 				dragspeed = GodTouch.GetDeltaPosition().x / Screen.width * 2f;
@@ -66,11 +58,15 @@ namespace GodTouches
 					Xcontroller += dragspeed;
 				}
 			}
-	//タッチ終了
-			else if (phase == GodPhase.Ended) 	
-			{
-				
-			}
+		}
+			
+
+		public void StopPlayer () {
+			playerYspeed = 0;
+		}
+
+		public void StartPlayer(){
+			playerYspeed = 2;
 		}
 	}
 }

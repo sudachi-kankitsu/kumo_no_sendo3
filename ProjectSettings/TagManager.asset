@@ -9,7 +9,7 @@ TagManager:
   - Camera
   - ObjectKiller
   - frontObjectKiller
-  - BossFlagController
+  - Boss
   layers:
   - Default
   - TransparentFX

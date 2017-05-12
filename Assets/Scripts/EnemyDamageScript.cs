@@ -7,6 +7,7 @@ public class EnemyDamageScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		EnemyHP = 1;
 	}
 	
 	// Update is called once per frame
@@ -16,13 +17,8 @@ public class EnemyDamageScript : MonoBehaviour {
 
 	public void Damage(){
 		EnemyHP -= 1;
-		Debug.Log (EnemyHP);
 		if (EnemyHP <= 0) {
 			Destroy (this.gameObject);
 		}
-	}
-
-	public float HPsend (){
-		return EnemyHP;
 	}
 }
