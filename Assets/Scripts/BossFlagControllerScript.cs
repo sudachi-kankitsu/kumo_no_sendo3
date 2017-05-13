@@ -14,11 +14,13 @@ public class BossFlagControllerScript : MonoBehaviour {
 
 	void Start(){
 		animator = Boss.GetComponent <Animator> ();
+		BossFlag = 9;
+		animator.SetInteger ("BossFlag",0);
 	}
 
 	void Update(){
 
-
+		Debug.Log (BossFlag);
 
 			
 //ボス死亡処理２
