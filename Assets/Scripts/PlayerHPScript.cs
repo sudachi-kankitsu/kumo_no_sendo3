@@ -40,7 +40,7 @@ public class PlayerHPScript : MonoBehaviour {
 
 //敵に当たったら１ダメージ+無敵に入る
 	void OnTriggerStay2D (Collider2D other){
-		if ((other.tag == "enemy" || other.tag == "nonDestroyableEnemy") && muteki == false) {
+		if ((other.tag == "enemy" || other.tag == "nonDestroyableEnemy" || other.tag == "Boss") && muteki == false) {
 			playerHP -= 1;
 			muteki = true;
 			rend.enabled = false;
