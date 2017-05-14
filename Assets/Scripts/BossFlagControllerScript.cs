@@ -19,9 +19,6 @@ public class BossFlagControllerScript : MonoBehaviour {
 	}
 
 	void Update(){
-
-		Debug.Log (BossFlag);
-
 			
 //ボス死亡処理２
 		if (BossFlag == 4){
