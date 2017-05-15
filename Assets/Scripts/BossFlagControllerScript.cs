@@ -18,7 +18,7 @@ public class BossFlagControllerScript : MonoBehaviour {
 	}
 
 	void Update(){
-		if (BossFlag != 9 && BossFlag != 4) {
+		if (BossFlag != 9 && BossFlag != 5 && BossFlag != 4) {
 //ボスの攻撃フラグ管理
 			if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack1")) {
 				BossFlag = 1;
@@ -54,6 +54,7 @@ public class BossFlagControllerScript : MonoBehaviour {
 	}
 
 	void clear(){
+		BossFlag = 5;
 		ClearText.text = "Clear!";
 		SystemSEscript systemSE = Maincamera.GetComponent<SystemSEscript>();
 		systemSE.ClearSound ();
