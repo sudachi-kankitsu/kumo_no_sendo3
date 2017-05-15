@@ -1671,7 +1671,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 3}
 --- !u!114 &1228223149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,7 +1692,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228223147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.84000015, z: 0}
+  m_LocalPosition: {x: 0, y: 4.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1822997823}
@@ -3237,6 +3237,7 @@ GameObject:
   - component: {fileID: 1822997825}
   - component: {fileID: 1822997829}
   - component: {fileID: 1822997830}
+  - component: {fileID: 1822997831}
   m_Layer: 16
   m_Name: Player
   m_TagString: Player
@@ -3275,7 +3276,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0956f18a86ef437fbd72edd4e08807f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4495a97a314484671bce377fdd469449, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3287,7 +3288,7 @@ Transform:
   m_GameObject: {fileID: 1822997821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 1228223150}
   m_Father: {fileID: 0}
@@ -3418,9 +3419,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.09}
+  m_Size: {x: 2, y: 2}
 --- !u!82 &1822997828
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3525,6 +3526,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc5957d435b1415a8893893ab935f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1822997831
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1822997821}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c9d6b1595f7549749c579a64e95054f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1904026601
 GameObject:
   m_ObjectHideFlags: 0
