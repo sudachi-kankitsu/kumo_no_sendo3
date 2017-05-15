@@ -17,6 +17,7 @@ public class EnemyDamageScript : MonoBehaviour {
 
 	public void Damage(){
 		EnemyHP -= 1;
+
 		if (EnemyHP <= 0) {
 			Destroy (this.gameObject);
 		}

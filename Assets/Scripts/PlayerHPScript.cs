@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHPScript : MonoBehaviour {
-	int playerHP = 5;
+	int playerHP = 3;
 	float mutekiTime = 3;
 	bool muteki = false;
 	public Text HP;
+	public GameObject Maincamera;
 
 	float interval = 0.25f;
 	public Renderer rend;
@@ -45,6 +46,9 @@ public class PlayerHPScript : MonoBehaviour {
 			muteki = true;
 			rend.enabled = false;
 
+			PlayerSEscript SEscript = this.gameObject.GetComponent<PlayerSEscript>();
+			SEscript.damageSound ();
+
 			if (playerHP <= 0) {
 				GameOver ();
 			}
@@ -55,5 +59,8 @@ public class PlayerHPScript : MonoBehaviour {
 		HP.text = "GameOver!";
 		GodTouches.PlayerMoveScript.playerYspeed = 0;
 		this.gameObject.SetActive (false);
+
+		SystemSEscript systemSE = Maincamera.GetComponent<SystemSEscript>();
+		systemSE.GameOverSound ();
 	}
 }
