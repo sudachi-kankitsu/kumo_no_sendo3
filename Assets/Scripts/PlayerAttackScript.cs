@@ -8,6 +8,12 @@ namespace GodTouches{
 		float startTime;
 		float CheckTime = 0.3f;
 
+		Animator animator;
+
+		void Start(){
+			animator = this.gameObject.GetComponent<Animator>();
+		}
+
 		void Update(){
 			
 				var phase = GodTouch.GetPhase ();
@@ -17,9 +23,15 @@ namespace GodTouches{
 				} else if (phase == GodPhase.Ended) {
 					if (Time.time - startTime < CheckTime) {
 						PlayerSEscript SEscript = this.gameObject.GetComponent<PlayerSEscript>();
+						animator.SetBool ("Attack",true);
+						Invoke ("AttackAnimationOFF",0.1f);
 						SEscript.attackSound ();
 					}
 				}
+		}
+
+		void AttackAnimationOFF(){
+			animator.SetBool ("Attack",false);
 		}
 	}
 }
