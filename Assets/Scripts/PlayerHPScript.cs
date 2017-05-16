@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHPScript : MonoBehaviour {
-	int playerHP = 3;
+	int playerHP = 10;
 	float mutekiTime = 3;
 	bool muteki = false;
 	public Text HP;
