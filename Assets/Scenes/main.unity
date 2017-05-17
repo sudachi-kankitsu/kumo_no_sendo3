@@ -1449,6 +1449,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.24
       objectReference: {fileID: 0}
+    - target: {fileID: 95243195360466134, guid: c0b87271eb8954171a6dc3f23e32ef72,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58724567821365028, guid: c0b87271eb8954171a6dc3f23e32ef72, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c0b87271eb8954171a6dc3f23e32ef72, type: 2}
@@ -2286,7 +2291,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.1}
-  m_Size: {x: 0.4, y: 1.8}
+  m_Size: {x: 0.3, y: 1}
   m_Direction: 0
 --- !u!1 &1694480039
 GameObject:
