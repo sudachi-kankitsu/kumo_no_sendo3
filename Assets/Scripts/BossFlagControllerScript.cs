@@ -7,7 +7,7 @@ public class BossFlagControllerScript : MonoBehaviour {
 	public static int BossFlag = 9;
 	public GameObject Boss;
 	public GameObject Maincamera;
-	public Text ClearText;
+	public GameObject ClearImg;
 
 	Animator animator;
 
@@ -15,6 +15,7 @@ public class BossFlagControllerScript : MonoBehaviour {
 		animator = Boss.GetComponent <Animator> ();
 		BossFlag = 9;
 		animator.SetInteger ("BossFlag",9);
+		ClearImg.gameObject.SetActive (false);
 	}
 
 	void Update(){
@@ -55,7 +56,7 @@ public class BossFlagControllerScript : MonoBehaviour {
 
 	void clear(){
 		BossFlag = 5;
-		ClearText.text = "Clear!";
+		ClearImg.gameObject.SetActive (true);
 		SystemSEscript systemSE = Maincamera.GetComponent<SystemSEscript>();
 		systemSE.ClearSound ();
 	}

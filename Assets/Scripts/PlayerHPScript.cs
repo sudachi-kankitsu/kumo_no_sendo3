@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHPScript : MonoBehaviour {
-	int playerHP = 10;
+	float playerHP = 10;
+	float playerFullHP;
 	float mutekiTime = 3;
 	bool muteki = false;
-	public Text HP;
+	public Image HPbar;
+	public GameObject GameOverImg;
 	public GameObject Maincamera;
 
 	float interval = 0.25f;
@@ -16,11 +18,13 @@ public class PlayerHPScript : MonoBehaviour {
 	void Start () {
 		rend = GetComponent<Renderer>();
 		rend.enabled = true;
+		playerFullHP = playerHP;
+		HPbar.fillAmount = 1;
+		GameOverImg.gameObject.SetActive (false);
 	}
 	
 //無敵時間中ちかちか
 	void Update () {
-		HP.text = "HP : " + playerHP.ToString();
 		if (muteki == true) {
 			mutekiTime -= Time.deltaTime;
 			interval -= Time.deltaTime;
@@ -45,7 +49,7 @@ public class PlayerHPScript : MonoBehaviour {
 			playerHP -= 1;
 			muteki = true;
 			rend.enabled = false;
-
+			HPbar.fillAmount = playerHP / playerFullHP;
 			PlayerSEscript SEscript = this.gameObject.GetComponent<PlayerSEscript>();
 			SEscript.damageSound ();
 
@@ -56,10 +60,9 @@ public class PlayerHPScript : MonoBehaviour {
 	}
 
 	void GameOver() {
-		HP.text = "GameOver!";
 		GodTouches.PlayerMoveScript.playerYspeed = 0;
 		this.gameObject.SetActive (false);
-
+		GameOverImg.gameObject.SetActive(true);
 		SystemSEscript systemSE = Maincamera.GetComponent<SystemSEscript>();
 		systemSE.GameOverSound ();
 	}
