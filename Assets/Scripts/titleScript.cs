@@ -7,6 +7,7 @@ namespace GodTouches{
 	public class titleScript : MonoBehaviour {
 		public GameObject player;
 		public GameObject TitleImg;
+		public GameObject TitleBG;
 		public GameObject Maincamera;
 
 		public float speed = 30f;  //透明化の速さ
@@ -18,6 +19,7 @@ namespace GodTouches{
 		void Start () {
 			player.SetActive (false);
 			TitleImg.SetActive (true);
+			TitleBG.SetActive (true);
 			fadeChecker = 9;
 			red = this.GetComponent<Image>().color.r;
 			green = this.GetComponent<Image>().color.g;
@@ -56,6 +58,7 @@ namespace GodTouches{
 			PlayerMoveScript pMoveS = Maincamera.GetComponent<PlayerMoveScript> ();
 			pMoveS.StartPlayer();
 			TitleImg.gameObject.SetActive (false);
+			TitleBG.gameObject.SetActive (false);
 		}
 
 		void fadeOut(){

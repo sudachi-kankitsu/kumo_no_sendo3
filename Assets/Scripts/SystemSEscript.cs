@@ -30,7 +30,14 @@ public class SystemSEscript : MonoBehaviour {
 
 	public void WindSound(){
 		Debug.Log("WindSound");
+		BGM.volume = 0.1f;
+		Invoke ("fieldBGMplay", 2.0f);
+		GameSE.PlayOneShot (Wind,0.8f);
+	}
+
+	void fieldBGMplay(){
 		BGM.clip = field;
-		GameSE.PlayOneShot (Wind);
+		BGM.Play ();
+		BGM.volume = 0.3f;
 	}
 }
