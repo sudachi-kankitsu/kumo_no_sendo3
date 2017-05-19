@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class SystemSEscript : MonoBehaviour {
 	public AudioSource BGM;
-	public AudioSource GameOver;
-	public AudioSource Clear;
+	public AudioClip title;
+	public AudioClip field;
+	public AudioSource GameSE;
+	public AudioClip GameOver;
+	public AudioClip Clear;
+	public AudioClip Wind;
 
-	// Use this for initialization
 	void Start () {
-		
+		BGM.clip = title;
+		GameSE.clip = Wind;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	public void GameOverSound(){
+		Debug.Log ("gameoverSound");
 		BGM.volume = 0.0f;
-		GameOver.PlayOneShot (GameOver.clip);
+		GameSE.PlayOneShot (GameOver);
 	}
 
 	public void ClearSound(){
 		BGM.volume = 0.0f;
-		Clear.PlayOneShot (Clear.clip);
+		GameSE.PlayOneShot (Clear);
+	}
+
+	public void WindSound(){
+		Debug.Log("WindSound");
+		BGM.clip = field;
+		GameSE.PlayOneShot (Wind);
 	}
 }

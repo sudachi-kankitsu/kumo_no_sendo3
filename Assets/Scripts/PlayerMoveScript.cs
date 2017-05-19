@@ -10,7 +10,7 @@ namespace GodTouches
 		public GameObject player;
 		float ScreenLeft;
 		float ScreenRight;
-		public static float playerYspeed = 2;	//縦に動く速さ（一定）
+		public static float playerYspeed = 0;	//縦に動く速さ（一定）
 		public static float playerXspeed = 2;	//横に動く速さ（最大）
 		float Xcontroller = 0;			//横の速さの調節用
 		float dragspeed;
@@ -23,7 +23,7 @@ namespace GodTouches
 			Vector3 maxpos = camera.ViewportToWorldPoint(new Vector3(1,1,10));
 			ScreenLeft = minpos.x + 0.1f;	//画面外チェック
 			ScreenRight = maxpos.x - 0.1f;
-			playerYspeed = 2;
+			playerYspeed = 0;
 			Xcontroller = 0;
 		}
 

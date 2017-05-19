@@ -6,7 +6,7 @@ namespace GodTouches{
 	public class PlayerAttackScript : MonoBehaviour {
 		
 		float startTime;
-		float CheckTime = 0.3f;
+		float CheckTime = 0.2f;
 
 		Animator animator;
 

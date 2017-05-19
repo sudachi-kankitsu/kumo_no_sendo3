@@ -7,15 +7,23 @@ namespace GodTouches{
 	public class RestartScript : MonoBehaviour {
 
 		public GameObject player;
+		public GameObject title;
 
 		void Update(){
 			var phase = GodTouch.GetPhase ();
 			if (phase == GodPhase.Began) {
-				if (player.activeSelf == false || BossFlagControllerScript.BossFlag == 5) {
-					BossFlagControllerScript.BossFlag = 0;
-					SceneManager.LoadScene ("main"); 
+				if ((player.activeSelf == false && title.activeSelf == false)|| BossFlagControllerScript.BossFlag == 5) {
+					Invoke ("Restart", 2.0f);
+					title.SetActive (true);
+					titleScript titleS = title.gameObject.GetComponent <titleScript>();
+					titleS.fadeIn ();
 				}
 			}
+		}
+
+		void Restart(){
+			BossFlagControllerScript.BossFlag = 0;
+			SceneManager.LoadScene ("main"); 
 		}
 	}
 }

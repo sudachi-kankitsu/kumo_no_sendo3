@@ -6,7 +6,7 @@ namespace GodTouches{
 	public class PlayerAttackCheckerScript : MonoBehaviour {
 
 		float startTime;
-		float CheckTime = 0.3f;
+		float CheckTime = 0.2f;
 		public GameObject AttackEffect;
 
 		void OnTriggerStay2D (Collider2D other) {
