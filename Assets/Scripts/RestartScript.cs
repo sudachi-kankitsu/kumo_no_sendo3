@@ -12,7 +12,7 @@ namespace GodTouches{
 		void Update(){
 			var phase = GodTouch.GetPhase ();
 			if (phase == GodPhase.Began) {
-				if ((player.activeSelf == false && title.activeSelf == false)|| BossFlagControllerScript.BossFlag == 5) {
+				if ((player.activeSelf == false && title.activeSelf == false)|| BossFlagControllerScript.BossFlag == 9) {
 					Invoke ("Restart", 2.0f);
 					title.SetActive (true);
 					titleScript titleS = title.gameObject.GetComponent <titleScript>();

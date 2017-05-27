@@ -2,36 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBehaviorScript : MonoBehaviour {
+public class BossAttackScript : MonoBehaviour {
 
+	int NextAttack = 1;
+
+	float ShotInterval = 1;
 	public GameObject shot;
-	float interval = 1;
-	int attackFlag = 2;
-
 	public AudioSource attack1SEsource;
 	public AudioSource attack2SEsource;
 	public AudioSource attack3SEsource;
 
-	void Start(){
-		interval = 1;
-		attackFlag = 2;
-	}
-
 	void Update(){
-		if (BossFlagControllerScript.BossFlag == 1) {
-			interval -= Time.deltaTime;
-			if (interval <= 0) {
+
+		if (BossFlagControllerScript.BossFlag == 1 && NextAttack == 1) {
+			
+			Invoke ("SE_Rush", 1.0f);
+			NextAttack = 2;
+
+		} else if (BossFlagControllerScript.BossFlag == 2) {
+			ShotInterval -= Time.deltaTime;
+			if (ShotInterval <= 0) {
 				Shot ();
-				interval = 1;
+				ShotInterval = 1;
 			}
-			attackFlag = 3;
-		} else if (BossFlagControllerScript.BossFlag == 3 && attackFlag == 3) {
+			NextAttack = 3;
+
+		} else if (BossFlagControllerScript.BossFlag == 3 && NextAttack == 3) {
 			Invoke ("shot1", 1.5f);
 			Invoke ("shot2", 2.5f);
-			attackFlag = 2;
-		}else if (BossFlagControllerScript.BossFlag == 6 && attackFlag == 2) {
-			Invoke ("se2", 1.0f);
-			attackFlag = 1;
+			NextAttack = 1;
 		}
 	}
 
@@ -55,7 +54,7 @@ public class BossBehaviorScript : MonoBehaviour {
 		attack3SEsource.PlayOneShot (attack3SEsource.clip);
 	}
 
-	void se2(){
+	void SE_Rush(){
 		attack2SEsource.PlayOneShot (attack2SEsource.clip);
 	}
 }
