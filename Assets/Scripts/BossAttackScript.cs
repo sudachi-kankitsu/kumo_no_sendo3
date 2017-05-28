@@ -5,21 +5,38 @@ using UnityEngine;
 public class BossAttackScript : MonoBehaviour {
 
 	int NextAttack = 1;
-
+	int Now_Animation = 0;
 	float ShotInterval = 1;
 	public GameObject shot;
 	public AudioSource attack1SEsource;
 	public AudioSource attack2SEsource;
 	public AudioSource attack3SEsource;
+	Animator animator;
+
+	void Start(){
+		animator = this.GetComponent<Animator>();
+	}
 
 	void Update(){
 
-		if (BossFlagControllerScript.BossFlag == 1 && NextAttack == 1) {
+		//今やっているアニメーションの数字をNow_Animationに代入
+		if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack1")) {
+			Now_Animation = 1;
+		} else if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack2")) {
+			Now_Animation = 2;
+		} else if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack3")) {
+			Now_Animation = 3;
+		}else {
+			Now_Animation = 0;
+		}
+
+		//アニメーションに合わせてSE＋shot
+		if (Now_Animation == 1 && NextAttack == 1) {
 			
 			Invoke ("SE_Rush", 1.0f);
 			NextAttack = 2;
 
-		} else if (BossFlagControllerScript.BossFlag == 2) {
+		} else if (Now_Animation == 2) {
 			ShotInterval -= Time.deltaTime;
 			if (ShotInterval <= 0) {
 				Shot ();
@@ -27,7 +44,7 @@ public class BossAttackScript : MonoBehaviour {
 			}
 			NextAttack = 3;
 
-		} else if (BossFlagControllerScript.BossFlag == 3 && NextAttack == 3) {
+		} else if (Now_Animation == 3 && NextAttack == 3) {
 			Invoke ("shot1", 1.5f);
 			Invoke ("shot2", 2.5f);
 			NextAttack = 1;

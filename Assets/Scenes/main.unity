@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 1036382155}
   - component: {fileID: 1036382156}
   m_Layer: 0
-  m_Name: SimpleEnemySpauner
+  m_Name: Debug_SimpleEnemySpauner
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2649,7 @@ GameObject:
   - component: {fileID: 1648637950}
   - component: {fileID: 1648637951}
   m_Layer: 0
-  m_Name: ShotEnemySpauner
+  m_Name: Debug_ShotEnemySpauner
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3839,12 +3839,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2075194696}
   m_Layer: 0
-  m_Name: title
+  m_Name: Trash_title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2075194696
 Transform:
   m_ObjectHideFlags: 0
@@ -3908,6 +3908,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653238260337468, guid: f13f167e0ec5e49b7ae4161b39c1d1b6, type: 2}
+      propertyPath: m_Name
+      value: Debug_ShotEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f167e0ec5e49b7ae4161b39c1d1b6, type: 2}

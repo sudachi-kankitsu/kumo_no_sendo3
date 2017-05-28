@@ -28,21 +28,6 @@ public class BossFlagControllerScript : MonoBehaviour {
 		}
 	}
 
-	//今やっている攻撃の数字をBossFlagに代入
-	void Update(){
-		if (BossFlag != -1 && BossFlag != 8 && BossFlag != 9) {
-			if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack1")) {
-				BossFlag = 1;
-			} else if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack2")) {
-				BossFlag = 2;
-			} else if (animator.GetCurrentAnimatorStateInfo (0).fullPathHash == Animator.StringToHash ("Base Layer.BossAttack3")) {
-				BossFlag = 3;
-			}else {
-				BossFlag = 0;
-			}
-		}
-	}
-
 	//ボス戦勝利
 	//カメラは止めたままプレイヤーを動かす＋１秒後にクリア画面へ
 	public void FlagClear() {

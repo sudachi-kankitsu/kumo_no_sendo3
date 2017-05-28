@@ -22,7 +22,6 @@ namespace GodTouches{
 		}
 
 		void Restart(){
-			BossFlagControllerScript.BossFlag = 0;
 			SceneManager.LoadScene ("main"); 
 		}
 	}
