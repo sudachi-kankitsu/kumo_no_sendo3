@@ -54,16 +54,10 @@ public class PlayerHPScript : MonoBehaviour {
 			SEscript.damageSound ();
 
 			if (playerHP <= 0) {
-				GameOver ();
+				GodTouches.RestartScript ResS = Maincamera.GetComponent<GodTouches.RestartScript> ();
+				ResS.GameOver ();
+				this.gameObject.SetActive(false);
 			}
 		}
-	}
-
-	void GameOver() {
-		GodTouches.PlayerMoveScript.playerYspeed = 0;
-		this.gameObject.SetActive (false);
-		GameOverImg.gameObject.SetActive(true);
-		SystemSEscript systemSE = Maincamera.GetComponent<SystemSEscript>();
-		systemSE.GameOverSound ();
 	}
 }

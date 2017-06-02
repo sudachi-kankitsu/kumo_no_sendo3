@@ -22,12 +22,16 @@ namespace GodTouches{
 					startTime = Time.time;
 				} else if (phase == GodPhase.Ended) {
 					if (Time.time - startTime < CheckTime) {
-						PlayerSEscript SEscript = this.gameObject.GetComponent<PlayerSEscript>();
-						animator.SetBool ("Attack",true);
-						Invoke ("AttackAnimationOFF",0.1f);
-						SEscript.attackSound ();
+					AttackMitame ();
 					}
 				}
+		}
+
+		void AttackMitame(){
+			PlayerSEscript SEscript = this.gameObject.GetComponent<PlayerSEscript>();
+			animator.SetBool ("Attack",true);
+			Invoke ("AttackAnimationOFF",0.1f);
+			SEscript.attackSound ();
 		}
 
 		void AttackAnimationOFF(){

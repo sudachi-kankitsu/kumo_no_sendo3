@@ -1798,8 +1798,19 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114392545284581726, guid: c0b87271eb8954171a6dc3f23e32ef72,
+        type: 2}
+      propertyPath: BossHPBar
+      value: 
+      objectReference: {fileID: 1070518252}
+    - target: {fileID: 114392545284581726, guid: c0b87271eb8954171a6dc3f23e32ef72,
+        type: 2}
+      propertyPath: Maincamera
+      value: 
+      objectReference: {fileID: 1780661572}
     m_RemovedComponents:
     - {fileID: 58724567821365028, guid: c0b87271eb8954171a6dc3f23e32ef72, type: 2}
+    - {fileID: 114483205220413968, guid: c0b87271eb8954171a6dc3f23e32ef72, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c0b87271eb8954171a6dc3f23e32ef72, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &914408323 stripped
@@ -1984,6 +1995,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1163127251784848, guid: bccc2cff9c67442e8bfaf570b839a68b, type: 2}
+--- !u!114 &1070518252 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114099746895646544, guid: c0b87271eb8954171a6dc3f23e32ef72,
+    type: 2}
+  m_PrefabInternal: {fileID: 914408322}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1177335924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2911,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss: {fileID: 1660750409}
   Maincamera: {fileID: 1780661572}
-  ClearImg: {fileID: 1890652512}
 --- !u!1 &1696096909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,7 +3198,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780661572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.24, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1036382155}
@@ -3228,7 +3244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1822997821}
-  title: {fileID: 287991790}
+  Boss: {fileID: 1660750409}
+  ClearImg: {fileID: 1890652512}
+  GameOverImg: {fileID: 192119602}
 --- !u!114 &1780661581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3256,7 +3274,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1108669938fcb4eed94acc4dbc9f53b1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7fd904c5385e14e888dc63b60825a4bd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.21
   m_Pitch: 1
@@ -3473,7 +3491,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1822997821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.19, z: 0}
+  m_LocalPosition: {x: 0, y: -3.95, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 1228223150}

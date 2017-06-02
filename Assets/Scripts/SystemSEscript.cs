@@ -12,13 +12,12 @@ public class SystemSEscript : MonoBehaviour {
 	public AudioClip Wind;
 
 	void Start () {
-		BGM.clip = title;
+		BGM.clip = field;
 		GameSE.clip = Wind;
 	}
 
 
 	public void GameOverSound(){
-		Debug.Log ("gameoverSound");
 		BGM.volume = 0.0f;
 		GameSE.PlayOneShot (GameOver);
 	}

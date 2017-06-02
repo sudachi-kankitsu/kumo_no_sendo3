@@ -8,6 +8,7 @@ namespace GodTouches{
 		float startTime;
 		float CheckTime = 0.2f;
 		public GameObject AttackEffect;
+		GameObject CollInfo;
 
 		void OnTriggerStay2D (Collider2D other) {
 			if (other.tag == "enemy" || other.tag == "Boss") {
@@ -26,8 +27,8 @@ namespace GodTouches{
 							DamageSeScript DamSEScript = this.GetComponent<DamageSeScript>();
 							DamSEScript.EmemyDamageSound ();
 						}else if (other.tag == "Boss") {
-							BossDamageScript Bdam = other.GetComponent<BossDamageScript> ();
-							Bdam.Damage ();
+							BossHPScript BHP = other.GetComponent<BossHPScript> ();
+							BHP.Damage ();
 							DamageSeScript DamSEScript = this.GetComponent<DamageSeScript>();
 							DamSEScript.BossDamageSound ();
 						}
@@ -37,6 +38,5 @@ namespace GodTouches{
 				}
 			}
 		}
-
 	}
 }

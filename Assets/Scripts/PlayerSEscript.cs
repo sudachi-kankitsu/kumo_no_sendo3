@@ -6,9 +6,6 @@ public class PlayerSEscript : MonoBehaviour {
 	public AudioSource attackSource;
 	public AudioSource damageSource;
 
-	void Start(){
-	}
-
 	public void attackSound(){
 		attackSource.PlayOneShot (attackSource.clip);
 	}

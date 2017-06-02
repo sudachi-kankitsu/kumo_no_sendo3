@@ -7,22 +7,37 @@ namespace GodTouches{
 	public class RestartScript : MonoBehaviour {
 
 		public GameObject player;
-		public GameObject title;
+		public GameObject Boss;
 
-		void Update(){
-			var phase = GodTouch.GetPhase ();
-			if (phase == GodPhase.Began) {
-				if ((player.activeSelf == false && title.activeSelf == false)|| BossFlagControllerScript.BossFlag == 9) {
-					Invoke ("Restart", 2.0f);
-					title.SetActive (true);
-					titleScript titleS = title.gameObject.GetComponent <titleScript>();
-					titleS.fadeIn ();
-				}
-			}
+		public GameObject ClearImg;
+		public GameObject GameOverImg;
+
+		//クリア：プレイヤーだけ動かす＋１秒後にクリア画像とクリア音
+		public void ClearAfter1Sec(){
+			PlayerMoveScript Pmove = this.GetComponent<PlayerMoveScript>();
+			Pmove.StartPlayer();
+			Invoke("Clear",1.0f);
+		}
+
+		void Clear(){
+			ClearImg.gameObject.SetActive (true);
+			SystemSEscript systemSE = this.GetComponent<SystemSEscript>();
+			systemSE.ClearSound ();
+			Invoke ("Restart", 6.0f);
+		}
+
+		//ゲームオーバー：カメラを止める＋ゲームオーバーの画像と音
+		public void GameOver(){
+			CameraMoveScript.CameraCanMove = 0;
+			GameOverImg.gameObject.SetActive (true);
+			SystemSEscript systemSE = this.GetComponent<SystemSEscript> ();
+			systemSE.GameOverSound ();
+			Invoke ("Restart", 6.0f);
 		}
 
 		void Restart(){
 			SceneManager.LoadScene ("main"); 
 		}
+			
 	}
 }
