@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDamageScript : MonoBehaviour {
 	public float EnemyHP = 1;
+	int PowerUpPoint = 1;
 
 	// Use this for initialization
 	void Start () {

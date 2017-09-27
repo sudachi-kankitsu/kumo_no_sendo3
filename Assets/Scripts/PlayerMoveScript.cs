@@ -8,12 +8,16 @@ namespace GodTouches
 	public class PlayerMoveScript : MonoBehaviour
 	{
 		public GameObject player;
+
 		float ScreenLeft;
 		float ScreenRight;
+
 		public static float playerYspeed = 2;	//縦に動く速さ（一定）
 		public static float playerXspeed = 2;	//横に動く速さ（最大）
 		float Xcontroller = 0;			//横の速さの調節用
 		float dragspeed;
+
+		bool controllStopper = false;
 
 		void Start()
 		{
@@ -44,11 +48,11 @@ namespace GodTouches
 
 
 			var phase = GodTouch.GetPhase ();
+
 	//タッチ中
-			if (phase == GodPhase.Moved) 	
-			{
-		//ドラッグの移動量でXcontrollerを変化（-1から1の中で）
-				dragspeed = GodTouch.GetDeltaPosition().x / Screen.width * 2f;
+	//ドラッグの移動量でXcontrollerを変化（-1から1の中で）
+			dragspeed = GodTouch.GetDeltaPosition().x / Screen.width * 2f;
+			if (phase == GodPhase.Moved && controllStopper == false) 	{
 				if (Xcontroller >= 1) {
 					Xcontroller -= 3 * Time.deltaTime;
 				} else if (Xcontroller <= -1) {
@@ -59,13 +63,24 @@ namespace GodTouches
 			}
 		}
 			
-
+		//プレイヤーが前に進むのを止める
 		public void StopPlayer () {
 			playerYspeed = 0;
 		}
 
 		public void StartPlayer(){
 			playerYspeed = 2;
+		}
+
+
+		//attackしている間操作不可にする
+		public void DisableControll(float attackingTime){
+			controllStopper = true;
+			Invoke ("EnableControll", attackingTime);
+		}
+
+		void EnableControll(){
+			controllStopper = false;
 		}
 	}
 }

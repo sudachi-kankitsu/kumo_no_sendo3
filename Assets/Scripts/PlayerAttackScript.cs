@@ -7,6 +7,7 @@ namespace GodTouches{
 		
 		float startTime;
 		float CheckTime = 0.2f;
+		public GameObject Maincamera;
 
 		Animator animator;
 
@@ -32,6 +33,10 @@ namespace GodTouches{
 			animator.SetBool ("Attack",true);
 			Invoke ("AttackAnimationOFF",0.1f);
 			SEscript.attackSound ();
+
+			//プレイヤーを操作不可にする
+			GodTouches.PlayerMoveScript Pmove = Maincamera.GetComponent<GodTouches.PlayerMoveScript>();
+			Pmove.DisableControll(CheckTime + 0.3f);
 		}
 
 		void AttackAnimationOFF(){
